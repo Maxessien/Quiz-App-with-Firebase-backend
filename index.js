@@ -39,7 +39,11 @@ const db = admin.firestore();
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: true }));
+app.use(cors({ 
+  origin: "https://maxquizzes.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 (async () => {
   try {
