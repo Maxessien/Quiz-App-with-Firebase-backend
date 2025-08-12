@@ -160,7 +160,7 @@ app.post("/api/add_quizzes_multiple", async (req, res) => {
 app.post("/api/quiz_answers", async (req, res) => {
   try {
     const answers = await db.doc(`quizzes/${req.body.quizId}`).get();
-    return res.status(200).json(answers.data());
+    return res.status(200).json(answers.data().answers);
   } catch (err) {
     return res.status(500).json({ message: "Server error" });
   }
