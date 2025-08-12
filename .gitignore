@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+serviceAccount.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional: local Firestore emulator data if any
+firebase-debug.log
+firestore-debug.log
+
+# Build output if any (e.g., dist or build folders)
+dist/
+build/
