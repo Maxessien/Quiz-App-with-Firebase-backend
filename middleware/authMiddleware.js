@@ -1,4 +1,4 @@
-import admin from "firebase-admin";
+import { auth } from "../fbConfig.js";
 
 export const authMiddleware = async (req, res, next) => {
   console.log("middleware", req);
@@ -9,7 +9,7 @@ export const authMiddleware = async (req, res, next) => {
   }
   try {
     const token = authHeader.slice(7);
-    const decodedToken = await admin.auth().verifyIdToken(token);
+    const decodedToken = await auth.verifyIdToken(token);
     req.user = decodedToken;
     console.log(req.user, "rewqq")
     next();
